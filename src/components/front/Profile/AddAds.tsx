@@ -14,6 +14,8 @@ import { toast } from 'react-toastify';
 import AddConfirm from './AddConfirm';
 import { useNavigate, useParams } from 'react-router-dom';
 
+const BASE_URL_IMAGE = import.meta.env.VITE_SERVER;
+
 const boxVariants = {
   initial: { x: '100%', opacity: 0 },
   animate: { x: 0, opacity: 1 },
@@ -486,7 +488,7 @@ setShowModelOptions(false);
       </div>
       <img
         key={`carad-img-${idx}`}
-        src={`http://localhost:5001/${img}`} // Adjust path if needed
+        src={`${BASE_URL_IMAGE}${img}`} // Adjust path if needed
         alt={`carad-img-${idx}`}
         className="w-16 h-16 object-cover rounded border"
       />
