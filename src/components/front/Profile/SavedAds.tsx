@@ -29,7 +29,6 @@ const queryClient = useQueryClient();
 
     }
 
-    console.log(data);
 
       async function deleteSaveAd(id: string) {
         await checkToken();

@@ -91,7 +91,6 @@ const ProductID = () => {
 dispatch(openChatSheet(true))
 };
 
-    console.log("FF:",data)
 
 
   if (isLoading) return <p>Loading...</p>;

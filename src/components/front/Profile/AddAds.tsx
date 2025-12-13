@@ -105,7 +105,7 @@ const mutation = useMutation({
       await checkToken();
       const response : carAd = await GET('car/' + carAdId);
       setCarAd(response);
-      console.log('Car Ad fetched:', response);
+   
       await getCity(); 
         // setSearchBrand(response.brand);
         // setSearchModel(response.model);
@@ -163,7 +163,7 @@ const mutation = useMutation({
       setSuggestions(response);
         setShowBrandOptions(true);
       
-      // console.log('Brands fetched:', response);
+ 
       return response;
     }, 300);
     return () => clearTimeout(delay);  
