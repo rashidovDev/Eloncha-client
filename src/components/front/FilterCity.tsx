@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import { FaSort } from "react-icons/fa";
 import Modalview from  '../Modals/Modal-view';
 import {motion} from "framer-motion"
-import { useDispatch, useSelector } from 'react-redux';
-import { hideToggleFilterCity, hideToggleModal, showToggleFilterCity, showToggleModal } from '../../store/slices/toggleSlice';
-import { RootState } from '../../store/store';
+import { useDispatch } from 'react-redux';
+import { hideToggleFilterCity, showToggleFilterCity } from '../../store/slices/toggleSlice';
 
 interface FilterProps {
   setCategory: (category: string) => void,
@@ -12,7 +11,6 @@ interface FilterProps {
 
 const Filter: React.FC<FilterProps> = ({ setCategory }) => {
 
-const [animate, setAnimate] = useState(true); 
 const [selectedCategory, setSelectedCategory] = useState('All')
  const [label, setLabel] = useState('I trust you')
   const ball = {
@@ -24,14 +22,12 @@ const [selectedCategory, setSelectedCategory] = useState('All')
 
 const category = ['All', 'Burgers', 'Fastfood', 'Sushi', 'Pizza', 'Lunch', 'Georgia', 'Italy', 'Russian', 'Turkish', 'Uzbek', "Halal"]
 
-const filterIsVisible = useSelector((state : RootState) => state.toggle.filterCityIsVisible) || false
 const dispatch = useDispatch()
 
   const sort = ['I trust you', 'Top rating', 'Fastest delivery']
 
   const handleButtonClick = (label : string) => {
     setLabel(label)
-    setAnimate(false);
 };
 
 const handleCategory = (category : string) => {

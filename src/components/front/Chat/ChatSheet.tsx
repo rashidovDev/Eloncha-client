@@ -1,14 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
-  SheetTitle,
-  SheetClose
+  SheetTitle
 } from "@/components/ui/sheet";
 import ChatList from "./ChatList";
 import ChatView from "./ChatView";
-import { X } from "react-feather";
 import { useDispatch, useSelector } from "react-redux";
 import { openChatSheet } from "@/store/slices/toggleSlice";
 import { RootState } from "@/store/store";
@@ -18,7 +16,6 @@ import { setOnlineUsers } from "@/store/slices/onlineSlice";
 
 export default function ChatSheet() {
 
-  const [activeChat, setActiveChat] = useState<any>(null);
      const dispatch = useDispatch()
    const chatSheetIsVisible = useSelector((state: RootState) => state.toggle.chatSheetIsVisible);
      const currentChat = useSelector((state: RootState) => state.chat.currentChat);

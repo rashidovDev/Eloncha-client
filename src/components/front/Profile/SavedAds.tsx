@@ -1,9 +1,8 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import React, { useState } from 'react';
-import { Save } from 'react-feather';
 import { useDispatch } from 'react-redux';
 import { showSuccessMessage, showToggleImageModal } from '../../../store/slices/toggleSlice';
-import { checkToken, DELETE, GET, PUT } from '../../api/api';
+import { checkToken, GET, PUT } from '../../api/api';
 import { toast } from 'react-toastify';
 import { carAd } from '../../../types/types';
 import CarAdCarousel from '../../utils/CarAdCarousel';

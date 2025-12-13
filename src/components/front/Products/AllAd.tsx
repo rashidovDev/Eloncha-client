@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { Eye } from 'react-feather'
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { carAd } from '../../../types/types';

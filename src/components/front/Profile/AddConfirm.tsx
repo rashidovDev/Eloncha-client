@@ -3,10 +3,8 @@ import { carAd } from '../../../types/types'
 import { XCircle } from 'react-feather'
 import { toast } from 'react-toastify';
 import { checkToken, DELETE } from '../../api/api';
-import Modal from '../../Modals/Modal';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { showToggleModal } from '../../../store/slices/toggleSlice';
-import { RootState } from '../../../store/store';
 import { NavLink } from 'react-router-dom';
 
 interface AddConfirmProps {

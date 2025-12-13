@@ -9,7 +9,7 @@ import { hideToggleProfile, openChatSheet, toggleHideMessage } from '../../store
 import { checkToken, GET } from '../api/api';
 import { Bell } from "react-feather";
 import ChatSheet from './Chat/ChatSheet';
-import { AVAILABLE_LANGUAGES, Language, useLanguage } from '../LanguageContext';
+import { AVAILABLE_LANGUAGES, useLanguage } from '../LanguageContext';
 import {
   DropdownMenu,
   DropdownMenuContent,

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { checkToken, DELETE, GET, POST, PUT } from '../../api/api';
 import { Brand, carAd, CarModel, City, FormDataAds } from '../../../types/types';
 import { useForm } from 'react-hook-form';
@@ -8,11 +8,11 @@ import { FILE } from '../../api/frontApi';
 import Modal from '../../Modals/Modal';
 import { hideToggleModal, showSuccessMessage, showToggleModal } from '../../../store/slices/toggleSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { Delete, Plus, XCircle } from 'react-feather';
+import { Plus, XCircle } from 'react-feather';
 import { toast } from 'react-toastify';
   import { RootState } from '../../../store/store'
 import AddConfirm from './AddConfirm';
-import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const boxVariants = {
   initial: { x: '100%', opacity: 0 },
@@ -25,7 +25,6 @@ const AddAds: React.FC = () => {
   const [carAd, setCarAd] = useState<carAd>();
   const [cityOptions, setCityOptions] = useState<City>();
   // const [brandQuery, setBrandQuery] = useState<Brand>();
-  const [showUpload, setShowUpload] = useState(false);
   const [files, setFiles] = useState<File[]>([]);
   const [previews, setPreviews] = useState<string[]>([]);
   const [searchBrand, setSearchBrand] = useState('');
@@ -43,7 +42,6 @@ const AddAds: React.FC = () => {
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors }, setValue
   } = useForm<FormDataAds>();
 
@@ -64,8 +62,6 @@ const mutation = useMutation({
     }
     },
     onSuccess: () => {
-     
-      setShowUpload(true);
       // reset();
     },
     onError: () => {
@@ -231,6 +227,18 @@ useEffect(() => {
             multiple
             className="block w-full text-sm file:py-2 file:px-4 file:rounded file:bg-blue-100 file:text-blue-700 hover:file:bg-blue-200"
           />
+          {previews.length > 0 && (
+            <div className="grid grid-cols-4 gap-2 mt-4">
+              {previews.map((src, idx) => (
+                <img
+                  key={`preview-${idx}`}
+                  src={src}
+                  alt={`preview-${idx}`}
+                  className="w-full h-16 object-cover rounded border"
+                />
+              ))}
+            </div>
+          )}
           <button
             onClick={() => {
               fileUpload()

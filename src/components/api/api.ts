@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {City, SIGNUProps, User, UserResponseProps } from '../../types/types';
+import { SIGNUProps, User, UserResponseProps } from '../../types/types';
 import { store } from '../../store/store';
 import { hideLoader, showLoader } from '../../store/slices/loaderSlice';
 import { toast } from 'react-toastify';

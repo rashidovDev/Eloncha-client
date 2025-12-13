@@ -1,6 +1,6 @@
 import React from 'react'
 import {AnimatePresence, motion} from "framer-motion"
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { RootState } from '../../store/store';
 
 interface ModalProps {

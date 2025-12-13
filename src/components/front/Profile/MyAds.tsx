@@ -7,9 +7,8 @@ import { toast } from 'react-toastify';
 import BackToPrev from '../BackToPrev';
 import CarAdCarousel from '../../utils/CarAdCarousel';
 import { useDispatch } from 'react-redux';
-import Success from '../../utils/Success';
-import { showSuccessMessage, showToggleImageModal, showToggleModal, toggleModal } from '../../../store/slices/toggleSlice';
-import { Plus, PlusCircle } from 'react-feather';
+import { showSuccessMessage, showToggleImageModal } from '../../../store/slices/toggleSlice';
+import { PlusCircle } from 'react-feather';
 
 
 const BASE_URL_IMAGE = import.meta.env.VITE_SERVER;

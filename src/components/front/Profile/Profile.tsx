@@ -1,7 +1,7 @@
 import React from 'react'
 import BackToPrev from '../BackToPrev'
 import { useAuth } from '../../Authcontext';
-import { Delete, Plus, PlusCircle, Trash } from 'react-feather';
+import { PlusCircle, Trash } from 'react-feather';
 import { NavLink } from 'react-router-dom';
 import Modal from '../../Modals/Modal';
 import { hideToggleModal, showSuccessMessage, showToggleModal } from '../../../store/slices/toggleSlice';

@@ -1,20 +1,17 @@
-import React, { useMemo } from "react";
+import { FC, useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { GET } from "../../api/api";
 import { carAd } from "../../../types/types";
 import { NavLink } from "react-router-dom";
-import { useLanguage } from "@/components/LanguageContext";
 import { Skeleton } from "@/components/ui/skeleton";
-import { HEADER_TITLE } from "@/utils/const";
 
 const BASE_URL_IMAGE = import.meta.env.VITE_SERVER;
 
 interface TitleProps {
   title: string;
-  language?: string;
 }
 
-const PremiumSkeleton: React.FC<TitleProps> = ({ title, language = "en" }) => (
+const PremiumSkeleton: FC<TitleProps> = ({ title }) => (
   <div className="flex flex-col gap-4">
     <div className="bg-gradient-to-r from-primary/80 to-primary/40 text-white px-4 py-2 rounded-md shadow">
       <h2 className="font-semibold text-lg">{title}</h2>
@@ -36,11 +33,7 @@ const PremiumSkeleton: React.FC<TitleProps> = ({ title, language = "en" }) => (
   </div>
 );
 
-const PremiumAd: React.FC<React.PropsWithChildren<TitleProps>> = ({
-  title,
-}) => {
-  const { language } = useLanguage();
-
+const PremiumAd: FC<TitleProps> = ({ title }) => {
   const { data, isLoading, isError } = useQuery({
     queryKey: ["premiumCarAds"],
     queryFn: async () => {
@@ -55,7 +48,6 @@ const PremiumAd: React.FC<React.PropsWithChildren<TitleProps>> = ({
     const shuffled = [...ads].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, 8);
   }, [ads]);
-  if (isLoading) return <PremiumSkeleton title={title} language={language} />;
   if (isLoading) return <PremiumSkeleton title={title} />;
 
   if (isError || !ads.length)

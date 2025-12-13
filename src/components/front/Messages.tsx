@@ -1,4 +1,3 @@
-import React from 'react'
 import { ChevronDown, ChevronUp } from 'react-feather'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleMessage } from '../../store/slices/toggleSlice'

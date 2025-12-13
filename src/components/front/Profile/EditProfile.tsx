@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useAuth } from '../../Authcontext';
 import { useForm, Controller } from 'react-hook-form';
-import PhoneInput, {
-  getCountries,
-  getCountryCallingCode
-}  from 'react-phone-number-input'
+import PhoneInput from 'react-phone-number-input'
 import 'react-phone-number-input/style.css'
 import { useMutation } from '@tanstack/react-query';
 import { checkToken, PUT } from '../../api/api';
@@ -22,7 +19,7 @@ const EditProfile: React.FC= () => {
         control,
         handleSubmit,
         reset,
-        formState: { errors }, setValue
+        formState: { errors }
       } = useForm<User>({
         defaultValues: {
           username: user?.username || '',

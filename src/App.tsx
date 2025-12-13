@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import './scss/main.scss'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {BallTriangle} from "react-loader-spinner"
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,7 +12,7 @@ import Success from "./components/utils/Success";
 
 
 
-import {Navbar, Login, ShowNavbar, NotFound, Header,ProductID, Messages, Home, Cars, About, Contact} from './components/navigate/navigate'
+import {Navbar, Login, ShowNavbar, NotFound, Header,ProductID, Cars, About, Contact} from './components/navigate/navigate'
 import Profile from "./components/front/Profile/Profile";
 import { AppDispatch } from "./store/store";
 import { hideToggleFilterCity, hideToggleProfile, toggleHideMessage } from "./store/slices/toggleSlice";

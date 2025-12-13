@@ -1,4 +1,3 @@
-import React, {ReactNode} from 'react'
 import { ChildrenProps } from '../types/types';
 
 const Button  = ({children, height, width} : ChildrenProps) => {

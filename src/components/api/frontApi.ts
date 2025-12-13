@@ -4,17 +4,6 @@ import { toast } from "react-toastify"
 import axios from "axios";
 import { store } from "../../store/store";
 
-const BASE_URL = import.meta.env.VITE_BASE_URL;
-
-const api = axios.create({
-  baseURL:BASE_URL || 'http://localhost:5001/api', 
-//   withCredentials: true,
-  headers: {
-        'Content-Type': 'application/json',
-		'accept': 'application/json',
-  },
-});
-
 export async function FILE(URL: string, payload: File | File[]) {
     try {
         store.dispatch(showLoader());

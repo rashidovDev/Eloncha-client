@@ -1,7 +1,6 @@
-import React, { createContext, useContext, useState, ReactNode, useEffect } from "react";
+import { createContext, useContext, useState, ReactNode, useEffect } from "react";
 import { User } from "../types/types";
 import { useNavigate } from "react-router-dom";
-import { useQuery } from '@tanstack/react-query';
 import { GET } from "./api/api";
 
 type AuthContextType = {
@@ -46,14 +45,6 @@ const navigate = useNavigate();
     } catch (error) {
       console.error("Error fetching user data:", error);
     }
-  };
-
-   const loginAdmin = (userData: User, token: string) => {
-    setUser(userData);
-    setToken(token);
-    localStorage.setItem("user", JSON.stringify(userData));
-    localStorage.setItem("access_token", token);
-    localStorage.setItem("tokenTime", JSON.stringify(Date.now()));
   };
 
   const logout = () => {

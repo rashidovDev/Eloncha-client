@@ -1,24 +1,17 @@
-import React, { useState } from 'react'
-import car from '../../../assets/car.png'
-import saved from "../../../assets/saved.png"
-import { VscSave } from "react-icons/vsc";
-import { Bookmark, ChevronDown, ChevronUp, Mail, Star } from 'react-feather';
+import { useState } from 'react'
+import { ChevronDown, ChevronUp, Mail } from 'react-feather';
 import PremiumAd from './PremiumAd';
-import Messages from '../Messages';
-import Filter from '../Filter';
 import { useParams } from 'react-router-dom';
 import { carAd } from '../../../types/types';
 import { checkToken, GET, POST, PUT } from '../../api/api';
-import { QueryClient, useQuery, useQueryClient } from '@tanstack/react-query';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 
 const BASE_URL_IMAGE = import.meta.env.VITE_SERVER;
 import CarAdCarousel from '../../utils/CarAdCarousel';
 import { useDispatch } from 'react-redux';
 import { openChatSheet, showToggleImageModal } from '../../../store/slices/toggleSlice';
-import BackToPrev from '../BackToPrev';
 import { FaBookmark, FaHeart, FaRegBookmark, FaRegHeart } from 'react-icons/fa';
 import { useAuth } from '../../Authcontext';
-import { Button } from '@/components/ui/button';
 import { openChat } from '@/store/slices/chatSlice';
 import { useLanguage } from '@/components/LanguageContext';
 
