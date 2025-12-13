@@ -15,7 +15,7 @@ onClick? : () => void;
 const AddConfirm : React.FC< AddConfirmProps > = ({carAd, adId, onClick}) => {
 
       const dispatch = useDispatch();
-
+const BASE_URL_IMAGE = import.meta.env.VITE_SERVER;
       async function deleteImage(filename: string) {
         if (!adId) {
           alert('No ad ID found.');
@@ -88,7 +88,7 @@ const AddConfirm : React.FC< AddConfirmProps > = ({carAd, adId, onClick}) => {
           </div>
           <img
             key={`carad-img-${idx}`}
-            src={`http://localhost:5001/${img}`} 
+            src={`${BASE_URL_IMAGE}${img}`} 
             alt={`carad-img-${idx}`}
             className="w-16 h-16 object-cover rounded border"
           />

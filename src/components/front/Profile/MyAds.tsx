@@ -67,7 +67,7 @@ const { data, isLoading, isError } = useQuery({
     >
    <button className="flex items-center main-bg rounded-md">
       <PlusCircle size={18} className='mr-1' />
-      <div className=''>Add Adminstrator</div>
+      <div className=''>Добавить объявления</div>
    </button>
     </NavLink>
     </div>
