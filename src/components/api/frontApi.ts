@@ -16,7 +16,7 @@ export async function FILE(URL: string, payload: File | File[]) {
         }
 
         const response = await axios.post(
-            `http://localhost:5001/api${URL}`,
+            `https://api.eloncha.store/api${URL}`,
             formData,   {withCredentials : true, headers: { Authorization: 'Bearer ' + localStorage.getItem('user_access_token') }}
         );
         store.dispatch(hideLoader());
