@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
+
+/* ===========================
+   GLOBAL STYLES (YOUR DESIGN)
+   =========================== */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #111;
+  user-select: none;
+}
+
+.loader {
+  position: absolute;
+  inset: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ===========================
+   LOGIN FLOAT LABEL EFFECT
+   =========================== */
+
+input[type="text"]:focus ~ .input-text,
+input[type="text"]:not(:placeholder-shown) ~ .input-text,
+input[type="password"]:focus ~ .input-text,
+input[type="password"]:not(:placeholder-shown) ~ .input-text {
+  @apply text-primary transform -translate-y-6 scale-75;
+}
+
+input:focus ~ .input-text1,
+input:not(:placeholder-shown) ~ .input-text1 {
+  @apply text-primary transform -translate-y-6 ml-2 scale-75;
+}
+
+/* ===========================
+   LOGIN ANIMATIONS
+   =========================== */
+
+.login-shadow {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.color-right {
+  transform: translateX(550px);
+  transition: .5s ease;
+}
+
+.color-left {
+  transform: translateX(0);
+  transition: .5s ease;
+}
+
+.login-right {
+  transform: translateX(0);
+  transition: .5s ease;
+}
+
+.login-left {
+  transform: translateX(-550px);
+  transition: .5s ease;
+}
+
+/* ===========================
+   SHADOWS
+   =========================== */
+
+.shadow-messages {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+/* ===========================
+   BASKET MOBILE
+   =========================== */
+
+.basket-bottom-margin {
+  transition: margin-bottom 500ms ease-in-out;
+  margin-bottom: -700px;
+}
+
+.basket-bottom-true-margin {
+  transition: margin-bottom 500ms ease-in-out;
+  margin-bottom: 0;
+}
+
+/* ===========================
+   TAILWIND ONLY
+   =========================== */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
