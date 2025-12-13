@@ -4,6 +4,8 @@ import axios from 'axios';
 import { User } from '../types/types';
 import { useAuth } from './Authcontext';
 
+const BASE_URL = import.meta.env.VITE_GOOGLE_BASE_URL;
+
 const GoogleSuccess : React.FC = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
@@ -15,7 +17,7 @@ const GoogleSuccess : React.FC = () => {
     if (!token) return;
 
     try {
-      const response = await axios.get<User>('http://localhost:5001/api/user/auth', {
+      const response = await axios.get<User>(`${BASE_URL}/api/user/auth`, {
         withCredentials: true,
         headers: { Authorization: 'Bearer ' + token }
       });
