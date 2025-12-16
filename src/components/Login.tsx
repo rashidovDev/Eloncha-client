@@ -513,9 +513,12 @@ const Login: React.FC = () => {
               onClick={() => {
                 setEmail('');
                 setPassword('');
+                setStrength('')
+                  setStrengthColor('black')
+                setStrengthRange('')
                 setLoginIsTrue(!loginIsTrue);
               }}
-              className="border rounded-[20px] p-3 w-[180px]"
+              className={`${loginIsTrue && 'hidden'} border rounded-[20px] p-3 w-[180px]`} 
             >
               {LOGIN_TEXT.left.btn[language]}
             </button>
@@ -536,9 +539,12 @@ const Login: React.FC = () => {
               onClick={() => {
                 setEmail('');
                 setPassword('');
+                setStrength('')
+                setStrengthColor('black')
+                setStrengthRange('')
                 setLoginIsTrue(!loginIsTrue);
               }}
-              className="border rounded-[20px] py-3 w-[200px]"
+              className={`${!loginIsTrue && 'hidden'} border rounded-[20px] py-3 w-[200px]`}
             >
               {LOGIN_TEXT.right.btn[language]}
             </button>
