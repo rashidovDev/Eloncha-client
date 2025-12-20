@@ -9,13 +9,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {Routes, Route} from "react-router-dom"
 import Success from "./components/utils/Success";
+import { IoChatboxEllipses } from "react-icons/io5";
+import { CiChat1 } from "react-icons/ci";
 
 
 
 import {Navbar, Login, ShowNavbar, NotFound, Header,ProductID, Cars, About, Contact} from './components/navigate/navigate'
 import Profile from "./components/front/Profile/Profile";
 import { AppDispatch } from "./store/store";
-import { hideToggleFilterCity, hideToggleProfile, toggleHideMessage } from "./store/slices/toggleSlice";
+import { hideToggleFilterCity, hideToggleProfile, openChatSheet, toggleHideMessage } from "./store/slices/toggleSlice";
 import { UserPrivateRoute } from "./components/front/private";
 import AddAds from "./components/front/Profile/AddAds";
 import MyAds from "./components/front/Profile/MyAds";
@@ -29,7 +31,7 @@ import Footer from "./components/front/Footer";
 import { useAuth } from "./components/Authcontext";
 import { socket } from "./services/socket";
 import { adjustUnread, setUnreadTotal } from "./store/slices/chatSlice";
-import { GET } from "./components/api/api";
+import { checkToken, GET } from "./components/api/api";
 import { IChats } from "./types/types";
 
 const App : React.FC = () => {
@@ -105,6 +107,14 @@ return (
         {loader && (
           <BallTriangle height={70} width={70} radius={5} color="#4fa94d" />
         )}
+      </div>
+
+      <div  onClick={async (e)  => {
+          await checkToken()
+          e.stopPropagation();
+          dispatch(openChatSheet(true))
+        }} className="fixed bottom-32 z-40 right-24   cursor-pointer">
+        <IoChatboxEllipses size={64} color="#2F6AF3" />
       </div>
 
       <Success />
