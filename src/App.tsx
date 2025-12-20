@@ -109,17 +109,22 @@ return (
         )}
       </div>
 
-      <div  onClick={async (e)  => {
-          await checkToken()
-          e.stopPropagation();
-          dispatch(openChatSheet(true))
-        }} className="fixed bottom-32 z-40 right-24   cursor-pointer">
-        <IoChatboxEllipses size={64} color="#2F6AF3" />
-      </div>
+      
 
       <Success />
 
       <ShowNavbar>
+         <div  onClick={async (e)  => {
+          await checkToken()
+          e.stopPropagation();
+          dispatch(openChatSheet(true))
+        }} className="fixed bottom-32 z-40 md:right-24 right-12  cursor-pointer">
+        <IoChatboxEllipses size={64} color="#2F6AF3" />
+      </div>
+      </ShowNavbar>
+
+      <ShowNavbar>
+        
         <Navbar/>
       </ShowNavbar>
 
