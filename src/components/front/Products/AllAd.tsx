@@ -210,7 +210,6 @@ const AllAd = () => {
                     alt={ad.title}
                     className='w-full h-28 object-cover cursor-pointer rounded-md'
                   />
-                  <CarAdCarousel images={images} />
                 </div>
               ) : (
                 <div className='w-full h-40 bg-gray-200 flex items-center justify-center text-gray-400 text-lg rounded-md'>
@@ -297,6 +296,7 @@ const AllAd = () => {
       </Pagination>
     </div>
   </div>
+  {images && <CarAdCarousel images={images} />}
 </div>
 
   )

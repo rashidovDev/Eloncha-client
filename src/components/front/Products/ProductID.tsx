@@ -36,7 +36,7 @@ const ProductID = () => {
      const {user, refetchUser} = useAuth()
     const [images, setImages] = useState<string[] | null>(null);
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
-    const [contactVisible, setContactVisible] = useState(false)
+    const [contactVisible, setContactVisible] = useState(true)
       const queryClient = useQueryClient();
       const { language } = useLanguage();
 

@@ -145,7 +145,10 @@ return (
     </div>
 
     {/* Footer always stays at bottom */}
+      <ShowNavbar>
+     
     <Footer />
+      </ShowNavbar>
   </div>
 );
 }
