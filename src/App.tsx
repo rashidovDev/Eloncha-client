@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 import {Routes, Route} from "react-router-dom"
 import Success from "./components/utils/Success";
 import { IoChatboxEllipses } from "react-icons/io5";
-import { CiChat1 } from "react-icons/ci";
+
 
 
 
