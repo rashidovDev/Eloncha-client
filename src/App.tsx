@@ -118,8 +118,8 @@ return (
           await checkToken()
           e.stopPropagation();
           dispatch(openChatSheet(true))
-        }} className="fixed bottom-32 z-40 md:right-24 right-12  cursor-pointer">
-        <IoChatboxEllipses size={64} color="#2F6AF3" />
+        }} className="fixed bottom-32 z-40 md:right-24 right-12 p-1 rounded-lg bg-primary  cursor-pointer">
+        <IoChatboxEllipses size={56} color="fff" />
       </div>
       </ShowNavbar>
 
